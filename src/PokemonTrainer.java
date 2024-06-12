@@ -9,4 +9,7 @@ public class PokemonTrainer {
     this.user = user;
     this.pokemonList = pokemons;
   }
+
+  public String getName() {
+  }
 }
