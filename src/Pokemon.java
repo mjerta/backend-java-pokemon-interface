@@ -15,4 +15,24 @@ public class Pokemon {
     this.pokemonFood = pokemonFood;
     this.sound = sound;
   }
+
+  public String getName() {
+    return name;
+  }
+
+  public int getLevel() {
+    return level;
+  }
+
+  public int getHp() {
+    return hp;
+  }
+
+  public String getPokemonFood() {
+    return pokemonFood;
+  }
+
+  public String getSound() {
+    return sound;
+  }
 }
