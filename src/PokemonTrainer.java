@@ -10,6 +10,12 @@ public class PokemonTrainer {
     this.pokemonList = pokemons;
   }
 
-  public String getName() {
+  public String getUser() {
+    return user;
   }
+
+  public List<Pokemon> getPokemons() {
+    return pokemonList;
+  }
+
 }
