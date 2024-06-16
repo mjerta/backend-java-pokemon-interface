@@ -19,4 +19,8 @@ public class PokemonGymOwner {
   public String getTown() {
     return town;
   }
+
+  public List<Pokemon> getPokemons() {
+    return pokemons;
+  }
 }
