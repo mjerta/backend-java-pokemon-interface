@@ -11,8 +11,8 @@ public class FirePokemon extends Pokemon {
   public List<String> getAttacks() {
     List<String> attacks = new ArrayList<>();
     attacks.add("inferno");
-    attacks.add("pyroball");
-    attacks.add("firelash");
+    attacks.add("pyroBall");
+    attacks.add("fireLash");
     return attacks;
   }
 

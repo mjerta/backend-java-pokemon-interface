@@ -10,8 +10,8 @@ public class WaterPokemon extends Pokemon {
   public List<String> getAttacks() {
     List<String> attacks = new ArrayList<>();
     attacks.add("surf");
-    attacks.add("hydropump");
-    attacks.add("hydrocanon");
+    attacks.add("hydroPump");
+    attacks.add("hydroCanon");
     return attacks;
   }
 

@@ -9,8 +9,8 @@ public class ElectricPokemon extends Pokemon {
 
   public List<String> getAttacks() {
     List<String> attacks = new ArrayList<>();
-    attacks.add("thunderpunch");
-    attacks.add("electroball");
+    attacks.add("thunderPunch");
+    attacks.add("electroBall");
     attacks.add("thunder");
     return attacks;
   }

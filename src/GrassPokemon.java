@@ -9,9 +9,9 @@ public class GrassPokemon extends Pokemon {
 
   public List<String> getAttacks() {
     List<String> attacks = new ArrayList<>();
-    attacks.add("thunderpunch");
-    attacks.add("electroball");
-    attacks.add("thunder");
+    attacks.add("leafStorm");
+    attacks.add("solarBeam");
+    attacks.add("leechSeed");
     return attacks;
   }
 
