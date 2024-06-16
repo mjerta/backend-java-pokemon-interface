@@ -8,4 +8,8 @@ public class FirePokemon extends Pokemon {
   public String getAttacks() {
     return "1. inferno 2. electroball 3. thunder";
   }
+
+  public void inferno(Pokemon name, Pokemon enemy) {
+
+  }
 }

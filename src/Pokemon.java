@@ -5,15 +5,15 @@ public class Pokemon {
   private String name;
   private int level;
   private int hp;
-  private String pokemonFood;
+  private String food;
   private String sound;
   private String type;
 
-  public Pokemon(String name, int level, int hp, String pokemonFood, String sound) {
+  public Pokemon(String name, int level, int hp, String food, String sound) {
     this.name = name;
     this.level = level;
     this.hp = hp;
-    this.pokemonFood = pokemonFood;
+    this.food = food;
     this.sound = sound;
   }
 
@@ -29,8 +29,8 @@ public class Pokemon {
     return hp;
   }
 
-  public String getPokemonFood() {
-    return pokemonFood;
+  public String getFood() {
+    return food;
   }
 
   public String getSound() {
@@ -44,4 +44,5 @@ public class Pokemon {
   public String getType() {
     return type;
   }
+
 }
