@@ -5,5 +5,7 @@ public class FirePokemon extends Pokemon {
     super.setType("fire");
   }
 
-
+  public String getAttacks() {
+    return "1. inferno 2. electroball 3. thunder";
+  }
 }
