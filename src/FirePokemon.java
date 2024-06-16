@@ -17,15 +17,21 @@ public class FirePokemon extends Pokemon {
   }
 
   public void inferno(Pokemon name, Pokemon enemy) {
-    enemy.
+    System.out.println(name.getName() + " attacks " + enemy.getName() + " with inferno");
   }
 
   public void pyroBall(Pokemon name, Pokemon enemy) {
+    System.out.println(name.getName() + " attacks " + enemy.getName() + " with pyroBall");
+
   }
 
   public  void fireLash(Pokemon name, Pokemon enemy) {
+    System.out.println(name.getName() + " attacks " + enemy.getName() + " with fireLash");
+
   }
 
   public void flameThrower(Pokemon name, Pokemon enemy) {
+    System.out.println(name.getName() + " attacks " + enemy.getName() + " with flameThrower");
+
   }
 }

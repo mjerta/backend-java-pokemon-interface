@@ -16,11 +16,15 @@ public class GrassPokemon extends Pokemon {
   }
 
   public void leafStorm(Pokemon name, Pokemon enemy) {
+    System.out.println(name.getName() + " attacks " + enemy.getName() + " with leafStorm");
   }
   public void solarBeam(Pokemon name, Pokemon enemy) {
+    System.out.println(name.getName() + " attacks " + enemy.getName() + " with solarBeam");
   }
   public void leechSeed(Pokemon name, Pokemon enemy) {
+    System.out.println(name.getName() + " attacks " + enemy.getName() + " with leechSeed");
   }
   public void leaveBlade(Pokemon name, Pokemon enemy) {
+    System.out.println(name.getName() + " attacks " + enemy.getName() + " with leaveblade");
   }
 }
