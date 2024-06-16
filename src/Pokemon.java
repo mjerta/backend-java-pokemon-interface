@@ -29,6 +29,10 @@ public class Pokemon {
     return hp;
   }
 
+  public void setHp(int hp) {
+    this.hp = hp;
+  }
+
   public String getFood() {
     return food;
   }
