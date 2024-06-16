@@ -4,6 +4,7 @@ import java.util.List;
 public class GrassPokemon extends Pokemon {
   public GrassPokemon(String name, int level, int hp, String pokemonFood, String sound) {
     super(name, level, hp, pokemonFood, sound);
+    super.setType("grass");
   }
 
   public List<String> getAttacks() {
