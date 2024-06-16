@@ -7,6 +7,7 @@ public class Pokemon {
   private int hp;
   private String pokemonFood;
   private String sound;
+  private String type;
 
   public Pokemon(String name, int level, int hp, String pokemonFood, String sound) {
     this.name = name;
@@ -34,5 +35,13 @@ public class Pokemon {
 
   public String getSound() {
     return sound;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public String getType() {
+    return type;
   }
 }
