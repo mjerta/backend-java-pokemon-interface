@@ -13,4 +13,13 @@ public class WaterPokemon extends Pokemon {
     attacks.add("hydrocanon");
     return attacks;
   }
+
+  public void surf(Pokemon name, Pokemon enemy) {
+  }
+  public void hydroPump(Pokemon name, Pokemon enemy) {
+  }
+  public void hydroCanon(Pokemon name, Pokemon enemy) {
+  }
+  public void rainDance(Pokemon name, Pokemon enemy) {
+  }
 }

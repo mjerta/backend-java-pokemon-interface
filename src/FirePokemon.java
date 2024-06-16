@@ -17,9 +17,14 @@ public class FirePokemon extends Pokemon {
   }
 
   public void inferno(Pokemon name, Pokemon enemy) {
-
   }
 
-  public void inferno(Pokemon name, Pokemon enemy) {
+  public void pyroBall(Pokemon name, Pokemon enemy) {
+  }
+
+  public  void fireLash(Pokemon name, Pokemon enemy) {
+  }
+
+  public void flameThrower(Pokemon name, Pokemon enemy) {
   }
 }

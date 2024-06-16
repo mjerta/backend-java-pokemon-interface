@@ -13,4 +13,13 @@ public class ElectricPokemon extends Pokemon {
     attacks.add("thunder");
     return attacks;
   }
+
+  public void thunderPunch(Pokemon name, Pokemon enemy) {
+  }
+  public void electroBall(Pokemon name, Pokemon enemy) {
+  }
+  public void thunder(Pokemon name, Pokemon enemy) {
+  }
+  public void voltTackle(Pokemon name, Pokemon enemy) {
+  }
 }
