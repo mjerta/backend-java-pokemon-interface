@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class FirePokemon extends Pokemon {
 
   public FirePokemon(String name, int level, int hp, String pokemonFood, String sound) {
@@ -5,11 +8,18 @@ public class FirePokemon extends Pokemon {
     super.setType("fire");
   }
 
-  public String getAttacks() {
-    return "1. inferno 2. electroball 3. thunder";
+  public List<String> getAttacks() {
+    List<String> attacks = new ArrayList<>();
+    attacks.add("inferno");
+    attacks.add("pyroball");
+    attacks.add("firelash");
+    return attacks;
   }
 
   public void inferno(Pokemon name, Pokemon enemy) {
 
+  }
+
+  public void inferno(Pokemon name, Pokemon enemy) {
   }
 }
