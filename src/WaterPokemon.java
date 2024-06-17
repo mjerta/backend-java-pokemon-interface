@@ -12,6 +12,7 @@ public class WaterPokemon extends Pokemon {
     attacks.add("surf");
     attacks.add("hydroPump");
     attacks.add("hydroCanon");
+    attacks.add("rainDance");
     return attacks;
   }
 

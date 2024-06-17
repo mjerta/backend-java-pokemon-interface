@@ -12,6 +12,7 @@ public class ElectricPokemon extends Pokemon {
     attacks.add("thunderPunch");
     attacks.add("electroBall");
     attacks.add("thunder");
+    attacks.add("voltTackle");
     return attacks;
   }
 

@@ -13,6 +13,7 @@ public class FirePokemon extends Pokemon {
     attacks.add("inferno");
     attacks.add("pyroBall");
     attacks.add("fireLash");
+    attacks.add("flameThrower");
     return attacks;
   }
 

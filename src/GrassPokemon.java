@@ -12,6 +12,7 @@ public class GrassPokemon extends Pokemon {
     attacks.add("leafStorm");
     attacks.add("solarBeam");
     attacks.add("leechSeed");
+    attacks.add("leaveBlade");
     return attacks;
   }
 
