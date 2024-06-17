@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ElectricPokemon extends Pokemon {
-  private final List<String> attacks = new ArrayList<>(Arrays.asList("thunderPunch", "electroBall", "thunder", "voltTackle"));
+  private final List<String> attacks = new ArrayList<>(Arrays.asList("thunderPunch", "electroBall", "thunder", "voltTackle", "feed"));
   private final String type = "electric";
 
   public ElectricPokemon(String name, int level, int hp, String pokemonFood, String sound) {

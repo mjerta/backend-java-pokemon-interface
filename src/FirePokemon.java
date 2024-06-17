@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FirePokemon extends Pokemon {
-  private final List<String> attacks = new ArrayList<>(Arrays.asList("inferno", "pyroBall", "fireLash", "flameThrower"));
+  private final List<String> attacks = new ArrayList<>(Arrays.asList("inferno", "pyroBall", "fireLash", "flameThrower", "feed"));
   private final String type = "fire";
 
   public FirePokemon(String name, int level, int hp, String pokemonFood, String sound) {

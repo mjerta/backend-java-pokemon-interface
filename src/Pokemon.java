@@ -17,6 +17,11 @@ public class Pokemon {
     this.sound = sound;
   }
 
+  public void feedPokemon() {
+    System.out.println("Feeding the Pokemon");
+
+  }
+
   // this is a method all types of pokemon can acces. This make it easy to determine the damage for a particular type of pokemon.
   public int setDamage(Pokemon enemy, int grass, int water, int electric, int fire) {
     int damage;
