@@ -34,5 +34,4 @@ public class FirePokemon extends Pokemon {
     int damage = super.setDamage(enemy, 70, 60, 50, 40);
     super.executeAttack(name, enemy, "flameThrower", damage);
   }
-
 }
