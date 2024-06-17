@@ -1,3 +1,4 @@
+import javax.swing.plaf.TableHeaderUI;
 import java.security.PrivateKey;
 
 public class Pokemon {
@@ -17,9 +18,13 @@ public class Pokemon {
     this.sound = sound;
   }
 
-  public void feedPokemon() {
-    System.out.println("Feeding the Pokemon");
+  public void feedPokemon(Pokemon pokemon) {
+    int boost = 30;
 
+    // This method is assuming the pokemon food belongs to this particular pokemon.
+    System.out.println("Feeding the " + pokemon.name + " pokemon with " + pokemon.food);
+    System.out.println("The hp is being boosted with " + boost + " to " + pokemon.name);
+    System.out.println("The hp of " + pokemon.name + " is " + pokemon.hp);
   }
 
   // this is a method all types of pokemon can acces. This make it easy to determine the damage for a particular type of pokemon.

@@ -163,7 +163,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "inferno" -> fire.inferno(pokemon, gymPokemon);
           case "pyroball" -> fire.pyroBall(pokemon, gymPokemon);
           case "firelash" -> fire.fireLash(pokemon, gymPokemon);
-          case "feed" -> fire.feedPokemon();
+          case "feed" -> fire.feedPokemon(pokemon);
           default -> fire.flameThrower(pokemon, gymPokemon);
         }
       }
@@ -173,7 +173,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "surf" -> water.surf(pokemon, gymPokemon);
           case "hydropump" -> water.hydroPump(pokemon, gymPokemon);
           case "hydrocanon" -> water.hydroCanon(pokemon, gymPokemon);
-          case "feed" -> water.feedPokemon();
+          case "feed" -> water.feedPokemon(pokemon);
           default -> water.rainDance(pokemon, gymPokemon);
         }
       }
@@ -183,7 +183,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "leafstorm" -> grass.leafStorm(pokemon, gymPokemon);
           case "solarbeam" -> grass.solarBeam(pokemon, gymPokemon);
           case "leechseed" -> grass.leechSeed(pokemon, gymPokemon);
-          case "feed" -> grass.feedPokemon();
+          case "feed" -> grass.feedPokemon(pokemon);
           default -> grass.leaveBlade(pokemon, gymPokemon);
         }
       }
@@ -193,7 +193,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "thunderpunch" -> electric.thunderPunch(pokemon, gymPokemon);
           case "electroball" -> electric.electroBall(pokemon, gymPokemon);
           case "thunder" -> electric.thunder(pokemon, gymPokemon);
-          case "feed" -> electric.feedPokemon();
+          case "feed" -> electric.feedPokemon(pokemon);
           default -> electric.voltTackle(pokemon, gymPokemon);
         }
       }
@@ -216,7 +216,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "inferno" -> fire.inferno(gymPokemon, pokemon);
           case "pyroBall" -> fire.pyroBall(gymPokemon, pokemon);
           case "fireLash" -> fire.fireLash(gymPokemon, pokemon);
-          case "feed" -> fire.feedPokemon();
+          case "feed" -> fire.feedPokemon(gymPokemon);
           default -> fire.flameThrower(gymPokemon, pokemon);
         }
       }
@@ -228,7 +228,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "surf" -> water.surf(gymPokemon, pokemon);
           case "hydroPump" -> water.hydroPump(gymPokemon, pokemon);
           case "hydroCanon" -> water.hydroCanon(gymPokemon, pokemon);
-          case "feed" -> water.feedPokemon();
+          case "feed" -> water.feedPokemon(gymPokemon);
           default -> water.rainDance(gymPokemon, pokemon);
         }
       }
@@ -240,7 +240,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "leafStorm" -> grass.leafStorm(gymPokemon, pokemon);
           case "solarBeam" -> grass.solarBeam(gymPokemon, pokemon);
           case "leechSeed" -> grass.leechSeed(gymPokemon, pokemon);
-          case "feed" -> grass.feedPokemon();
+          case "feed" -> grass.feedPokemon(gymPokemon);
           default -> grass.leaveBlade(gymPokemon, pokemon);
         }
       }
@@ -252,7 +252,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "thunderPunch" -> electric.thunderPunch(gymPokemon, pokemon);
           case "electroBall" -> electric.electroBall(gymPokemon, pokemon);
           case "thunder" -> electric.thunder(gymPokemon, pokemon);
-          case "feed" -> electric.feedPokemon();
+          case "feed" -> electric.feedPokemon(gymPokemon);
           default -> electric.voltTackle(gymPokemon, pokemon);
         }
       }
