@@ -16,43 +16,23 @@ public class FirePokemon extends Pokemon {
   }
 
   public void inferno(Pokemon name, Pokemon enemy) {
-    System.out.println(name.getName() + " attacks " + enemy.getName() + " with inferno");
-
     int damage = super.setDamage(enemy, 60, 50, 40, 30);
-
-    System.out.println(enemy.getName() + " loses " + damage + " hp");
-    enemy.setHp(enemy.getHp() - damage);
-    System.out.println(enemy.getName() + " now has an hp of " + enemy.getHp());
+    super.executeAttack(name, enemy, "inferno", damage);
   }
 
   public void pyroBall(Pokemon name, Pokemon enemy) {
-    System.out.println(name.getName() + " attacks " + enemy.getName() + " with pyroBall");
-
     int damage = super.setDamage(enemy, 60, 50, 40, 30);
-
-    System.out.println(enemy.getName() + " loses " + damage + " hp");
-    enemy.setHp(enemy.getHp() - damage);
-    System.out.println(enemy.getName() + " now has an hp of " + enemy.getHp());
+    super.executeAttack(name, enemy, "pyroBall", damage);
   }
 
   public void fireLash(Pokemon name, Pokemon enemy) {
-    System.out.println(name.getName() + " attacks " + enemy.getName() + " with fireLash");
-
     int damage = super.setDamage(enemy, 70, 60, 50, 40);
-
-    System.out.println(enemy.getName() + " loses " + damage + " hp");
-    enemy.setHp(enemy.getHp() - damage);
-    System.out.println(enemy.getName() + " now has an hp of " + enemy.getHp());
+    super.executeAttack(name, enemy, "fireLash", damage);
   }
 
   public void flameThrower(Pokemon name, Pokemon enemy) {
-    System.out.println(name.getName() + " attacks " + enemy.getName() + " with flameThrower");
-
     int damage = super.setDamage(enemy, 70, 60, 50, 40);
-
-    System.out.println(enemy.getName() + " loses " + damage + " hp");
-    enemy.setHp(enemy.getHp() - damage);
-    System.out.println(enemy.getName() + " now has an hp of " + enemy.getHp());
+    super.executeAttack(name, enemy, "flameThrower", damage);
   }
 
 }
