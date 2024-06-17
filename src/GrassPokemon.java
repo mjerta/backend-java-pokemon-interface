@@ -5,7 +5,6 @@ import java.util.List;
 public class GrassPokemon extends Pokemon {
   private final List<String> attacks = new ArrayList<>(Arrays.asList("leafStorm", "solarBeam", "leechSeed", "leaveBlade"));
   private final String type = "grass";
-  private int damage;
 
   public GrassPokemon(String name, int level, int hp, String pokemonFood, String sound) {
     super(name, level, hp, pokemonFood, sound);
@@ -17,18 +16,22 @@ public class GrassPokemon extends Pokemon {
   }
 
   public void leafStorm(Pokemon name, Pokemon enemy) {
-    System.out.println(name.getName() + " attacks " + enemy.getName() + " with leafStorm");
+    int damage = super.setDamage(enemy, 30, 40, 60, 50);
+    super.executeAttack(name, enemy, "leafStorm", damage);
   }
 
   public void solarBeam(Pokemon name, Pokemon enemy) {
-    System.out.println(name.getName() + " attacks " + enemy.getName() + " with solarBeam");
+    int damage = super.setDamage(enemy, 30, 40, 60, 50);
+    super.executeAttack(name, enemy, "solarBeam", damage);
   }
 
   public void leechSeed(Pokemon name, Pokemon enemy) {
-    System.out.println(name.getName() + " attacks " + enemy.getName() + " with leechSeed");
+    int damage = super.setDamage(enemy, 40, 50, 70, 60);
+    super.executeAttack(name, enemy, "leechSeed", damage);
   }
 
   public void leaveBlade(Pokemon name, Pokemon enemy) {
-    System.out.println(name.getName() + " attacks " + enemy.getName() + " with leaveblade");
+    int damage = super.setDamage(enemy, 40, 50, 70, 60);
+    super.executeAttack(name, enemy, "leaveBlade", damage);
   }
 }
