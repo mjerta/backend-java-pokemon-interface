@@ -3,7 +3,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FirePokemon extends Pokemon {
-  // needs another variable
   private final List<String> attacks = new ArrayList<>(Arrays.asList("inferno", "pyroBall", "fireLash", "flameThrower"));
   private final String type = "fire";
 
@@ -19,12 +18,11 @@ public class FirePokemon extends Pokemon {
   public void inferno(Pokemon name, Pokemon enemy) {
     System.out.println(name.getName() + " attacks " + enemy.getName() + " with inferno");
 
-    // net int[] {0 is grass ,
     int damage = super.setDamage(enemy, 60, 50, 40, 30);
 
-    System.out.println(enemy + " loses " + damage + " hp");
+    System.out.println(enemy.getName() + " loses " + damage + " hp");
     enemy.setHp(enemy.getHp() - damage);
-    System.out.println(enemy + " now has an hp of " + enemy.getHp());
+    System.out.println(enemy.getName() + " now has an hp of " + enemy.getHp());
   }
 
   public void pyroBall(Pokemon name, Pokemon enemy) {
