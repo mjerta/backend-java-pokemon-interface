@@ -1,21 +1,19 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FirePokemon extends Pokemon {
   // needs another variable
   private int damage;
+  private final List<String> attacks = new ArrayList<>(Arrays.asList("inferno", "pyroBall", "fireLash", "flameThrower"));
+  private final String type = "fire";
 
   public FirePokemon(String name, int level, int hp, String pokemonFood, String sound) {
     super(name, level, hp, pokemonFood, sound);
-    super.setType("fire");
+    super.setType(type);
   }
 
   public List<String> getAttacks() {
-    List<String> attacks = new ArrayList<>();
-    attacks.add("inferno");
-    attacks.add("pyroBall");
-    attacks.add("fireLash");
-    attacks.add("flameThrower");
     return attacks;
   }
 
