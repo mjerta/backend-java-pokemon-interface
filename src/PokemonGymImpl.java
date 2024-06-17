@@ -1,3 +1,4 @@
+import javax.management.MBeanAttributeInfo;
 import java.util.*;
 
 // Los in deze klasse alle foutmeldingen op door (abstracte) klassen met variabelen en methodes te maken en een interface met methodes
@@ -53,6 +54,7 @@ public class PokemonGymImpl implements PokemonGym {
 
   @Override
   public void fightRound(PokemonTrainer trainer, PokemonGymOwner owner, Pokemon pokemon, Pokemon gymPokemon) {
+    boolean hasGameEnded = true; // asuming this will be initially true
     Scanner speler_A = new Scanner(System.in);
     while (pokemon.getHp() > 0 && gymPokemon.getHp() > 0) {
 
@@ -69,15 +71,28 @@ public class PokemonGymImpl implements PokemonGym {
 
       System.out.println(pokemon.getName() + " has defeated " + gymPokemon.getName());
     }
+    for (Pokemon p : owner.getPokemons()) {
+      if (p.getHp() > 0) {
+        hasGameEnded = false;
+        break;
+      }
+    }
 
-    System.out.println("Would you like to keep playing? yes or no");
-    String keepPlaying = speler_A.nextLine();
-    if (keepPlaying.equals("yes")) {
-      enteredTheGym(trainer);
+    if (!hasGameEnded) {
+
+      System.out.println("Would you like to keep playing? yes or no");
+      String keepPlaying = speler_A.nextLine();
+      if (keepPlaying.equals("yes")) {
+        enteredTheGym(trainer);
+      }
+      else {
+        System.out.println("Thank you for playing");
+      }
     }
     else {
-      System.out.println("Thank you for playing");
+      System.out.println("The game has stopped. All pokemon are dead now!");
     }
+
   }
 
   @Override
