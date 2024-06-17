@@ -27,6 +27,11 @@ public class ElectricPokemon extends Pokemon {
 
   public void thunder(Pokemon name, Pokemon enemy) {
     int damage = super.setDamage(enemy, 60, 70, 40, 50);
+    if (enemy.getType().equals("electric")) {
+      int boostAmount = 30;
+      enemy.boostHp(boostAmount);
+      System.out.println("Oopsie , " + enemy.getName() + "is getting a boost of " + boostAmount + ".");
+    }
     super.executeAttack(name, enemy, "thunder", damage);
   }
 

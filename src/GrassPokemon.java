@@ -26,8 +26,14 @@ public class GrassPokemon extends Pokemon {
   }
 
   public void leechSeed(Pokemon name, Pokemon enemy) {
-    int damage = super.setDamage(enemy, 40, 50, 70, 60);
-    super.executeAttack(name, enemy, "leechSeed", damage);
+    int amountToLeech = 40;
+    int currentHpEnemy = enemy.getHp();
+    int currentHpPlayer = name.getHp();
+    name.setHp(currentHpPlayer + amountToLeech);
+    enemy.setHp(currentHpEnemy - amountToLeech);
+    System.out.println("The hp is leeched from the enemy with " + amountToLeech);
+    System.out.println("The current of the " + enemy.getName() + " is " + enemy.getHp());
+    System.out.println("The current of the " + name.getName() + " is " + name.getHp());
   }
 
   public void leaveBlade(Pokemon name, Pokemon enemy) {
