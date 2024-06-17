@@ -76,5 +76,4 @@ public class Pokemon {
     enemy.setHp(enemy.getHp() - damage);
     System.out.println(enemy.getName() + " now has an hp of " + enemy.getHp());
   }
-
 }

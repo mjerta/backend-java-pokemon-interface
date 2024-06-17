@@ -16,18 +16,22 @@ public class WaterPokemon extends Pokemon {
   }
 
   public void surf(Pokemon name, Pokemon enemy) {
-    System.out.println(name.getName() + " attacks " + enemy.getName() + " with surf");
+    int damage = super.setDamage(enemy, 40, 30, 50, 60);
+    super.executeAttack(name, enemy, "surf", damage);
   }
 
   public void hydroPump(Pokemon name, Pokemon enemy) {
-    System.out.println(name.getName() + " attacks " + enemy.getName() + " with hydroPump");
+    int damage = super.setDamage(enemy, 40, 30, 50, 60);
+    super.executeAttack(name, enemy, "hydroPump", damage);
   }
 
   public void hydroCanon(Pokemon name, Pokemon enemy) {
-    System.out.println(name.getName() + " attacks " + enemy.getName() + " with hydroCanon");
+    int damage = super.setDamage(enemy, 50, 40, 60, 70);
+    super.executeAttack(name, enemy, "hydroCanon", damage);
   }
 
   public void rainDance(Pokemon name, Pokemon enemy) {
-    System.out.println(name.getName() + " attacks " + enemy.getName() + " with rainDance");
+    int damage = super.setDamage(enemy, 50, 40, 60, 70);
+    super.executeAttack(name, enemy, "rainDance", damage);
   }
 }
