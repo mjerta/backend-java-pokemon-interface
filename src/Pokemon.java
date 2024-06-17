@@ -1,5 +1,5 @@
-import javax.swing.plaf.TableHeaderUI;
-import java.security.PrivateKey;
+import java.util.List;
+import java.util.Scanner;
 
 public class Pokemon {
 
@@ -18,13 +18,41 @@ public class Pokemon {
     this.sound = sound;
   }
 
-  public void feedPokemon(Pokemon pokemon) {
-    int boost = 30;
+  public void boostHp(int amount) {
+    this.hp += amount;
+  }
 
-    // This method is assuming the pokemon food belongs to this particular pokemon.
-    System.out.println("Feeding the " + pokemon.name + " pokemon with " + pokemon.food);
-    System.out.println("The hp is being boosted with " + boost + " to " + pokemon.name);
-    System.out.println("The hp of " + pokemon.name + " is " + pokemon.hp);
+  public void feedPokemon(Pokemon pokemon, boolean isGymPokemon, List<Food> foods) {
+    if (!isGymPokemon) {
+      String allChoisesAvailable = "";
+
+      for (Food food : foods) {
+        allChoisesAvailable += food.getName() + " ";
+      }
+      System.out.println("What food do you want to give to your Pokémon?");
+      System.out.println("You can choose between: " + allChoisesAvailable);
+      Scanner scanner = new Scanner(System.in);
+      String choice = scanner.nextLine();
+
+      feed(pokemon, choice);
+    }
+    else {
+      // For now the standard choise for the gym pokemon is just his default,so he vant make any mistakes.
+      feed(pokemon, pokemon.food);
+    }
+  }
+
+  private void feed(Pokemon pokemon, String choice) {
+    if (pokemon.getFood().equals(choice) || "Everything".equals(pokemon.food)) {
+      int boostAmount = 30;
+      pokemon.boostHp(boostAmount);
+      System.out.println("Feeding " + pokemon.getName() + " with " + pokemon.food);
+      System.out.println("HP is boosted by " + boostAmount);
+      System.out.println("The HP of " + pokemon.getName() + " is now " + pokemon.getHp());
+    }
+    else {
+      System.out.println("This Pokémon does not eat that.");
+    }
   }
 
   // this is a method all types of pokemon can acces. This make it easy to determine the damage for a particular type of pokemon.

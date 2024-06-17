@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -20,14 +22,22 @@ public class Main {
 
   private static List<Pokemon> pokemons = Arrays.asList(charizard, blastoise, venusaur, ditto, raichu, gyarados);
 
+  // Extra list of food a pokemon trainer & gymowner has to its arsenal
+  private static final Food fireNougats = new Food("firenougats");
+  private static final Food pokeFlakes = new Food("Pokeflakes");
+  private static final Food pokeLeafs = new Food("Pokeleafs");
+  private static final Food pokeBrocks = new Food("Pokebrocks");
+
+  private static List<Food> foods = new ArrayList<>(Arrays.asList(fireNougats, pokeFlakes, pokeLeafs, pokeBrocks));
+
   // Los in de main methode alle foutmeldigen op door (abstracte) klassen met variabelen en methoden te maken (en soms een import).
   // In de main methode en de Main klasse hoef je niks te veranderen.
   public static void main(String[] args) {
     Scanner speler_A = new Scanner(System.in);
-    PokemonGymImpl pokemonGym = new PokemonGymImpl(pokemons);
+    PokemonGymImpl pokemonGym = new PokemonGymImpl(pokemons, foods);
     System.out.println("First player please enter your name: ");
     String userA = speler_A.nextLine();
-    PokemonTrainer player1 = new PokemonTrainer(userA, pokemons);
+    PokemonTrainer player1 = new PokemonTrainer(userA, pokemons, foods);
     System.out.println("To start your game, we have given you 6 Pokemons to use");
     System.out.println("these are the Pokemons you get:");
     pokemonGym.printPokemon(pokemons);

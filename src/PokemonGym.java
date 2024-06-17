@@ -17,9 +17,10 @@ public interface PokemonGym {
 
   String chooseAttackPlayer(Pokemon p);
 
-  void performAttackPlayer(Pokemon pokemon, Pokemon gymPokemon, String attack);
+  void performAttackPlayer(Pokemon pokemon, Pokemon gymPokemon, String attack, PokemonTrainer trainer);
 
-  void gymOwnerAttacks(Pokemon gymPokemon, Pokemon pokemon);
+  void gymOwnerAttacks(Pokemon gymPokemon, Pokemon pokemon, PokemonGymOwner owner);
 
   void attackOrChange(Pokemon pokemon, Pokemon gymPokemon, PokemonTrainer trainer, PokemonGymOwner gym);
+
 }

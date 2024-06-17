@@ -5,14 +5,16 @@ import java.util.*;
 public class PokemonGymImpl implements PokemonGym {
 
   List<Pokemon> pokemons;
+  private List<Food> foods;
 
-  public PokemonGymImpl(List<Pokemon> pokemons) {
+  public PokemonGymImpl(List<Pokemon> pokemons, List<Food> foods) {
     this.pokemons = pokemons;
+    this.foods = foods;
   }
 
   @Override
   public void enteredTheGym(PokemonTrainer player1) {
-    PokemonGymOwner gymOwner = new PokemonGymOwner("Brock", "Pewter City", pokemons);
+    PokemonGymOwner gymOwner = new PokemonGymOwner("Brock", "Pewter City", pokemons, foods);
     System.out.println("You have entered the " + gymOwner.getTown() + " gym");
     System.out.println("In front of you stands a pokemontrainer");
     System.out.println(Main.ANSI_RED + gymOwner.getName() + Main.ANSI_RESET + ": Hello stranger, I'm " + gymOwner.getName() +
@@ -55,7 +57,7 @@ public class PokemonGymImpl implements PokemonGym {
     while (pokemon.getHp() > 0 && gymPokemon.getHp() > 0) {
 
       System.out.println("Its " + owner.getName() + "'s turn to attack");
-      gymOwnerAttacks(gymPokemon, pokemon);
+      gymOwnerAttacks(gymPokemon, pokemon, owner);
       System.out.println("Its " + trainer.getName() + "'s turn to attack");
       attackOrChange(pokemon, gymPokemon, trainer, owner);
 
@@ -64,6 +66,7 @@ public class PokemonGymImpl implements PokemonGym {
       System.out.println(gymPokemon.getName() + " has defeated " + pokemon.getName());
     }
     else if (gymPokemon.getHp() <= 0) {
+
       System.out.println(pokemon.getName() + " has defeated " + gymPokemon.getName());
     }
 
@@ -148,7 +151,7 @@ public class PokemonGymImpl implements PokemonGym {
   }
 
   @Override
-  public void performAttackPlayer(Pokemon pokemon, Pokemon gymPokemon, String attack) {
+  public void performAttackPlayer(Pokemon pokemon, Pokemon gymPokemon, String attack, PokemonTrainer trainer) {
     FirePokemon fire;
     ElectricPokemon electric;
     GrassPokemon grass;
@@ -163,7 +166,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "inferno" -> fire.inferno(pokemon, gymPokemon);
           case "pyroball" -> fire.pyroBall(pokemon, gymPokemon);
           case "firelash" -> fire.fireLash(pokemon, gymPokemon);
-          case "feed" -> fire.feedPokemon(pokemon);
+          case "feed" -> fire.feedPokemon(pokemon, false, trainer.getFoods());
           default -> fire.flameThrower(pokemon, gymPokemon);
         }
       }
@@ -173,7 +176,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "surf" -> water.surf(pokemon, gymPokemon);
           case "hydropump" -> water.hydroPump(pokemon, gymPokemon);
           case "hydrocanon" -> water.hydroCanon(pokemon, gymPokemon);
-          case "feed" -> water.feedPokemon(pokemon);
+          case "feed" -> water.feedPokemon(pokemon, false, trainer.getFoods());
           default -> water.rainDance(pokemon, gymPokemon);
         }
       }
@@ -183,7 +186,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "leafstorm" -> grass.leafStorm(pokemon, gymPokemon);
           case "solarbeam" -> grass.solarBeam(pokemon, gymPokemon);
           case "leechseed" -> grass.leechSeed(pokemon, gymPokemon);
-          case "feed" -> grass.feedPokemon(pokemon);
+          case "feed" -> grass.feedPokemon(pokemon, false, trainer.getFoods());
           default -> grass.leaveBlade(pokemon, gymPokemon);
         }
       }
@@ -193,7 +196,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "thunderpunch" -> electric.thunderPunch(pokemon, gymPokemon);
           case "electroball" -> electric.electroBall(pokemon, gymPokemon);
           case "thunder" -> electric.thunder(pokemon, gymPokemon);
-          case "feed" -> electric.feedPokemon(pokemon);
+          case "feed" -> electric.feedPokemon(pokemon, false, trainer.getFoods());
           default -> electric.voltTackle(pokemon, gymPokemon);
         }
       }
@@ -201,7 +204,7 @@ public class PokemonGymImpl implements PokemonGym {
   }
 
   @Override
-  public void gymOwnerAttacks(Pokemon gymPokemon, Pokemon pokemon) {
+  public void gymOwnerAttacks(Pokemon gymPokemon, Pokemon pokemon, PokemonGymOwner owner) {
     FirePokemon fire;
     ElectricPokemon electric;
     GrassPokemon grass;
@@ -216,7 +219,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "inferno" -> fire.inferno(gymPokemon, pokemon);
           case "pyroBall" -> fire.pyroBall(gymPokemon, pokemon);
           case "fireLash" -> fire.fireLash(gymPokemon, pokemon);
-          case "feed" -> fire.feedPokemon(gymPokemon);
+          case "feed" -> fire.feedPokemon(gymPokemon, true, owner.getFoodList());
           default -> fire.flameThrower(gymPokemon, pokemon);
         }
       }
@@ -228,7 +231,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "surf" -> water.surf(gymPokemon, pokemon);
           case "hydroPump" -> water.hydroPump(gymPokemon, pokemon);
           case "hydroCanon" -> water.hydroCanon(gymPokemon, pokemon);
-          case "feed" -> water.feedPokemon(gymPokemon);
+          case "feed" -> water.feedPokemon(gymPokemon, true, owner.getFoodList());
           default -> water.rainDance(gymPokemon, pokemon);
         }
       }
@@ -240,7 +243,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "leafStorm" -> grass.leafStorm(gymPokemon, pokemon);
           case "solarBeam" -> grass.solarBeam(gymPokemon, pokemon);
           case "leechSeed" -> grass.leechSeed(gymPokemon, pokemon);
-          case "feed" -> grass.feedPokemon(gymPokemon);
+          case "feed" -> grass.feedPokemon(gymPokemon, true, owner.getFoodList());
           default -> grass.leaveBlade(gymPokemon, pokemon);
         }
       }
@@ -252,7 +255,7 @@ public class PokemonGymImpl implements PokemonGym {
           case "thunderPunch" -> electric.thunderPunch(gymPokemon, pokemon);
           case "electroBall" -> electric.electroBall(gymPokemon, pokemon);
           case "thunder" -> electric.thunder(gymPokemon, pokemon);
-          case "feed" -> electric.feedPokemon(gymPokemon);
+          case "feed" -> electric.feedPokemon(gymPokemon, true, owner.getFoodList());
           default -> electric.voltTackle(gymPokemon, pokemon);
         }
       }
@@ -269,7 +272,7 @@ public class PokemonGymImpl implements PokemonGym {
 
     if (choice.equalsIgnoreCase("a")) {
       String attack = chooseAttackPlayer(pokemon);
-      performAttackPlayer(pokemon, gymPokemon, attack);
+      performAttackPlayer(pokemon, gymPokemon, attack, trainer);
     }
     else {
       pokemon = choosePokemon(trainer);
