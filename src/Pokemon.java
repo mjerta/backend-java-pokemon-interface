@@ -77,6 +77,7 @@ public class Pokemon {
 
   // this is a method all types of pokemon can acces. This make it easy to determine the damage for a particular type of pokemon.
   public void executeAttack(Pokemon name, Pokemon enemy, String attackName, int damage) {
+    System.out.println(name.getSound());
     System.out.println(name.getName() + " attacks " + enemy.getName() + " with " + attackName);
     System.out.println(enemy.getName() + " loses " + damage + " hp");
     enemy.setHp(enemy.getHp() - damage);

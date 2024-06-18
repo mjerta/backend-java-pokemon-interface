@@ -26,8 +26,10 @@ public class PokemonGymImpl implements PokemonGym {
 
     Pokemon gymPokemon = chooseGymPokemon(gymOwner);
     System.out.println(Main.ANSI_RED + gymOwner.getName() + Main.ANSI_RESET + ": I'll choose you, " + gymPokemon.getName());
+    System.out.println(gymPokemon.getSound());
     Pokemon pokemon = choosePokemon(player1);
     System.out.println(Main.ANSI_GREEN + player1.getName() + Main.ANSI_RESET + ": I'll choose you, " + pokemon.getName());
+    System.out.println(pokemon.getSound());
 
     fightRound(player1, gymOwner, pokemon, gymPokemon);
 
